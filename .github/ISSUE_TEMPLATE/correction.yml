@@ -1,0 +1,44 @@
+name: Correction
+description: Something in the notes, flashcards, questions or papers is wrong or unclear
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Topic number and section, or paste the page link
+      placeholder: "3.7 · Profit vs cash flow  (https://d1v4nchik.github.io/DPBusinessManagement/#notes/u37)"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - Factual error
+        - Doesn't match the subject guide or markscheme style
+        - Calculation or formula
+        - Real company case (outdated or wrong)
+        - Typo or wording
+        - Broken link, video or diagram
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What's wrong, and what should it say?
+      description: A source (subject guide, textbook, company report) helps a lot.
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: SL or HL?
+      options:
+        - Both
+        - SL
+        - HL
+    validations:
+      required: false

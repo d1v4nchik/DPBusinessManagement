@@ -1,0 +1,22 @@
+name: Suggestion
+description: An idea to make the notes more useful
+title: "[Idea] "
+labels: ["suggestion"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's your idea?
+      description: A new feature, a topic that needs more depth, a better real company example, anything.
+    validations:
+      required: true
+  - type: dropdown
+    id: who
+    attributes:
+      label: Are you a student or a teacher?
+      options:
+        - Student
+        - Teacher
+        - Other
+    validations:
+      required: false
