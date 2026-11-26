@@ -53,7 +53,7 @@ Stuck on a word? Press <kbd>/</kbd> on any page to search the notes, the glossar
 
 ## What's inside
 
-<p align="center"><img src=".github/stats.svg" alt="41 topic pages, 1,229 flashcards, 397 exam questions, 938 glossary terms" width="100%"></p>
+<p align="center"><img src=".github/stats.svg" alt="41 topic pages, 1,229 flashcards, 438 exam questions, 940 glossary terms" width="100%"></p>
 
 <p align="center"><sub>Totals for HL. SL has 29 topic pages, 829 flashcards and 287 exam questions.</sub></p>
 
@@ -72,7 +72,7 @@ Stuck on a word? Press <kbd>/</kbd> on any page to search the notes, the glossar
   </tr>
   <tr>
     <td valign="top"><b>Formulas and diagrams</b><br>All 64 formulas, the exam formula sheet first, with worked examples and a number drill. 59 diagrams drawn to scale.</td>
-    <td valign="top"><b>Glossary and videos</b><br>938 terms with full-mark definitions. Underlined words in the notes show their meaning when you tap them. Over 130 short videos.</td>
+    <td valign="top"><b>Glossary and videos</b><br>940 terms with full-mark definitions. Underlined words in the notes show their meaning when you tap them. Over 130 short videos.</td>
   </tr>
 </table>
 
