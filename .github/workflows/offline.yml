@@ -1,0 +1,39 @@
+name: Offline copy
+
+# Attaches the newest single-file copy of the notes to the "offline" release whenever the site
+# changes, so the download link in the README always gives the latest notes.
+on:
+  push:
+    branches: [main]
+    paths: ["index.html", ".github/workflows/offline.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: offline-copy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make the offline file
+        run: cp index.html ib-bm-notes-offline.html
+      - name: Publish it to the "offline" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="One file with every topic, flashcard, exam question and practice paper. Download it, then double-click to open it in your browser, no internet needed.
+
+          This copy does not update itself. It shows a small banner when newer notes are out, or you can always use the live site: https://d1v4nchik.github.io/DPBusinessManagement/
+
+          Last updated $(date -u '+%-d %B %Y')."
+          if ! gh release view offline >/dev/null 2>&1; then
+            gh release create offline --title "Offline copy of the notes" --notes "$NOTES" --latest
+          else
+            gh release edit offline --notes "$NOTES"
+          fi
+          gh release upload offline "ib-bm-notes-offline.html#Built from ${GITHUB_SHA::12}" --clobber
